@@ -20,6 +20,15 @@ if __name__ == "__main__":
     rewardsTable = RewardsTable(nRows, nColumns, nPossibleActions, gamma)
     # rewardsTable.setGoalReward(pacmanInitialRow, pacmanInitialColumn, goalReward)
 
+    nRows = 6
+    nColumns = 6
+    pacmanInitialRow = nRows - 1
+    pacmanInitialColumn = 0
+
+    ghostInitialRow = 0
+    ghostInitialColumn = nColumns - 1
+    rewardsTable.interpolate(nRows,nColumns)
+
     pacman = Agent(pacmanInitialRow, pacmanInitialColumn, 'yellow')
     ghost = Ghost(ghostInitialRow, ghostInitialColumn, 'b', nPossibleActions, nRows, nColumns, rewardsTable)
     ghost.setOldGhost()
